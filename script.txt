@@ -1,0 +1,165 @@
+SW-01
+
+ 
+
+enable
+
+conf t
+
+hostname Gabi_Ale
+
+username GABRIELE privilege 15 secret GABI
+
+ip domain-name 1rede.local
+
+enable secret gabriele*enable
+
+line console 0
+
+login local
+
+password Gabriele*console
+
+login
+
+exit
+
+crypto key generate rsa general-key modulus 1024
+
+line vty 0 15
+
+login local
+
+password ALEXANDRE*vty
+
+transport input ssh
+
+login
+
+exit
+
+banner motd "ACESSAR SOMENTE COM A AUTORIZAÇAO DE ALEXANDRE E GABRIELE"
+
+service password encryption
+
+interface vlan 1
+
+ip address 192.168.0.254 255.255.255.0
+
+no shutdown
+
+end
+
+wr
+
+ 
+
+SW-02
+
+ 
+
+enable
+
+conf t
+
+hostname Gabi_Ale
+
+useename GABRIELE privilege 15 secret GABI
+
+ip domain-name 1rede.local
+
+enable secret GABRIELE*enable
+
+line console 0
+
+login local
+
+password *console
+
+login
+
+exit
+
+crypto key generate rsa general-key modulus 1024
+
+line vty 0 15
+
+login local
+
+password GABRIELE*vty
+
+transport input ssh
+
+login
+
+exit
+
+banner motd "ACESSAR SOMENTE COM A AUTORIZAÇAO DE ALEXANDRE E GABRIELE"
+
+service password encryption
+
+interface vlan 1
+
+ip address 172.16.255.254 255.255.0.0
+
+no shutdown
+
+end
+
+wr
+
+ 
+
+RT-01
+
+ 
+
+enable
+
+conf t
+
+hostname Gabi_Ale
+
+username GABRIELE privilege 15 secret GABI
+
+ip domain-name 1rede.local
+
+enable secret gabriele*enable
+
+line console 0
+
+login local
+
+password Gabriele*console
+
+login
+
+exit
+
+crypto key generate rsa general-key modulus 1024
+
+line vty 0 15
+
+login local
+
+password ALEXANDRE*vty
+
+transport input ssh
+
+login
+
+exit
+
+banner motd "ACESSAR SOMENTE COM A AUTORIZAÇAO DE ALEXANDRE E GABRIELE"
+
+service password encryption
+
+interface vlan 1
+
+ip address 192.168.0.254 255.255.255.0
+
+no shutdown
+
+end
+
+wr
